@@ -41,5 +41,5 @@ Column|Type|Options|
 |user_id |integer| null: false, foreign_key: true|
 |group_id |integer| |null: false, foreign_key: true|
 ##Association
- has_one:group
- has_one:users
+ belongs_to :group
+-belongs_to :user
