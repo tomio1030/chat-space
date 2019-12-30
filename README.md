@@ -23,14 +23,13 @@
 
 ### Association
 has_many :messages
-has_many :groups
 has_many :groups_users
 has_many :groups, through: groups_users
 
  ## groupsテーブル
 Column|Type|Options|
 |------|----|-------|
-|group_name|string| null: false, unique: true|
+|name|string| null: false, unique: true|
  ##Association
 has_many :groups_users
 has_many :users, through: groups_users
@@ -42,5 +41,5 @@ Column|Type|Options|
 |user_id |integer| null: false, foreign_key: true|
 |group_id |integer| |null: false, foreign_key: true|
 ##Association
-belongs_to :group
-belongs_to :users
+ has_one:group
+ has_one:users
