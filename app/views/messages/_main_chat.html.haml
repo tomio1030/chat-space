@@ -1,0 +1,47 @@
+.chat-main
+
+  .group-info
+    .info-left-box
+      .box-name kkk
+      .box-member-list member:oooo
+
+
+
+    = link_to "#", class:"info-edit-bth" do
+      Edit
+    
+
+  .message-list
+    .message 
+      
+      .upper-info 
+        .upper-info-taler name
+        .upper-info-date 2020/01/06
+      .message-text texttext
+
+    .message 
+      
+      .upper-info 
+        .upper-info-taler name
+        .upper-info-date 2020/01/06
+      .message-text texttext
+
+      .message 
+      
+      .upper-info 
+        .upper-info-taler name
+        .upper-info-date 2020/01/06
+      .message-text texttext
+
+
+
+
+  .message-fome
+    .message-input
+      %input{class:"input-box"}
+      %input{class:"image", id:"image", type:"file"}
+      %label{class: "input-image", for:"image"}
+        = icon('fa', 'image')
+          
+    .send-box 
+      %input{:name => "commit",:class => "submit-btn", :type => "submit", :value => "Send"}
