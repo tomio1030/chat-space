@@ -58,17 +58,17 @@
         display: flex;
         margin-bottom: 10px;
 
-          .upper-info__taler{
-            font-size: 16px;
-            color: #333333;
-            font-weight: bold;
-          }
+        &__taler{
+          font-size: 16px;
+          color: #333333;
+          font-weight: bold;
+        }
               
-          .upper-info__date{
-            display: flex;
-            font-size: 12px;
-            margin-left: 10px;
-          }
+        &__date{
+          display: flex;
+          font-size: 12px;
+          margin-left: 10px;
+       }
      }    
           .message-text{
             font-size: 14px;
