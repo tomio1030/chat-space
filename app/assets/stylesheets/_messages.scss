@@ -179,8 +179,9 @@
         height: 91px;
         margin-bottom: 40px;
         display: block;
+        text-decoration: none;
 
-        .group-name{
+        .group__name{
           height: 15px;
           width: 260px;
           color: #ffff;
@@ -188,11 +189,17 @@
           margin-bottom: 5px;
 
         }
-        .last-message{
+        .group__message{
           color: #ffff;
           font-size: 11px;
         }
 
       }
+
+
+  }
+
+  a{
+    text-decoration: none;
 
   }
