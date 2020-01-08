@@ -6,20 +6,16 @@
         =current_user.name
 
       .item-icons 
-        = link_to "#" do
+        = link_to new_group_path do
           =fa_icon 'edit', class: "item-icons"
         =link_to edit_user_path(current_user) do
           = fa_icon 'cog', class: "item-icons"
            
   .group-list
-    .group
-      .group-name test1
-      .last-message まだメッセージはありません。
-
-    .group
-      .group-name test1
-      .last-message まだメッセージはありません。
-         
-    .group
-      .group-name test1
-      .last-message まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
