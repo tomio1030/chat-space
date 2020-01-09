@@ -48,17 +48,17 @@
     height:calc(100vh - 190px) ;
     background-color:#fafafa;
     padding: 46px 40px;
+    overflow-y: scroll;
 
-    .message{
+    .upper-message{
       padding-bottom: 40px;
-      display: flex;
       display: block;
        
      .upper-info{
         display: flex;
         margin-bottom: 10px;
 
-        &__taler{
+        &__user-name{
           font-size: 16px;
           color: #333333;
           font-weight: bold;
@@ -68,55 +68,57 @@
           display: flex;
           font-size: 12px;
           margin-left: 10px;
+          color: #999999;
        }
      }    
-          .message-text{
+     .lower-message{
             font-size: 14px;
-            padding-bottom: 40px;
+            padding-bottom: 10px;
         }
     }    
   }
 
-  .message-fome{
-    height: 90px;
+  .message-form{
     background-color: #d2d2d2;
     padding: 20px 40px;
-    display: flex;
-    
-    .message-input{
+
+    .new_message{
       display: flex;
-      width: calc(100% - 120px);
-      position: relative;
+      width: 100%;
+      overflow: hidden;
 
-      .input-box{
-        height: 50px;
-        background-color: #ffffff;
-        width: 100%;
-
-        position: absolute;
+      .message-box{
         display: flex;
-
-          .input-text{
-            padding: 0 40px 0 10px;
-            height: 50px;
-            width: 100%;
-            margin-top: 15px;
-
-          }
-      }
-        .image{
-          display: none;
+        position: relative;
+  
+        &__input{
+          height: 50px;
+          background-color: #ffffff;
+          width: 100%;
+          display: flex;
+          padding: 0 40px 0 10px;
+            &--text{
+              font-size: 1.3rem;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              cursor: pointer;
+  
+            }
         }
-          .input-image{
-            top: 8px;
+    }
+    
+      .image{
+          display: none;
+      }
+          .icon{
+            font-size: 1.3rem;
+            top: 6px;
             right: 15px;
             margin-top: 10px;
             position:absolute;
 
-            input{
-              display: none;
-              padding-top: 35px;
-            }
+            
       }
     }
 
@@ -125,7 +127,7 @@
       height: 50px;
       margin-left: 10px;
 
-        .submit-btn{
+        &__btn{
           width: 100px;
           height: 50px;
           margin-left: 10px;
@@ -174,14 +176,14 @@
     height:calc(100vh - 100px) ;
     padding: 20px 20px 0;
     box-sizing: border-box;
-
+    overflow-y: scroll;
       .group {
         height: 91px;
         margin-bottom: 40px;
         display: block;
         text-decoration: none;
 
-        .group__name{
+        &__name{
           height: 15px;
           width: 260px;
           color: #ffff;
@@ -196,10 +198,8 @@
 
       }
 
-
   }
 
   a{
     text-decoration: none;
-
   }

@@ -2,40 +2,27 @@
 
   .group-info
     .info-left__box
-      .box-name kkk
-      .box-member__list member:oooo
-
-    = link_to "#", class:"info-edit__bth" do
+      .box-name 
+        = @group.name
+      .box-member__list 
+        member:
+        - @group.users.each do |user|
+          =user.name
+    = link_to edit_group_path(@group), class:"info-edit__bth" do
       Edit
     
   .message-list
-    .message 
-      
-      .upper-info 
-        .upper-info__taler name
-        .upper-info__date 2020/01/06
-      .message-text texttext
+    = render @messages
+    
 
-    .message 
-      
-      .upper-info 
-        .upper-info__taler name
-        .upper-info__date 2020/01/06
-      .message-text texttext
+  .message-form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'message-box__input', placeholder: 'type a message'
+      .message-box
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa', 'image', class: 'icon')
+          = f.file_field :image, class: 'image'
+      = f.submit 'Send', class: 'send-box__btn'
 
-      .message 
-      
-      .upper-info 
-        .upper-info__taler name
-        .upper-info__date 2020/01/06
-      .message-text texttext
 
-  .message-fome
-    .message-input
-      %input{class:"input-box"}
-      %input{class:"image", id:"image", type:"file"}
-      %label{class: "input-image", for:"image"}
-        = icon('fa', 'image')
-          
-    .send-box 
-      %input{name: "commit",class: "submit-btn", type: "submit", value: "Send"}
+
