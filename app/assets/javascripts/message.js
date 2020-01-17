@@ -2,8 +2,7 @@ $(function() {
   last_message_id = $('.message:last').data("message-id");
   function buildHTML(message){
    if ( message.image ) {
-     var html =
-      `<div class = "message" data-message-id=${message.id}>
+     var html =`<div class = "message" data-message-id=${message.id}>
         <div class="upper-message" >
          <div class="upper-info">
            <div class="upper-info__user-name">
@@ -22,8 +21,7 @@ $(function() {
        </div>`
      return html;
    } else {
-     var html =
-      `<div class = "message" data-message-id=${message.id}>
+     var html =`<div class = "message" data-message-id=${message.id}>
       <div class="upper-message" >
          <div class="upper-info">
            <div class="upper-info__user-name">
@@ -67,7 +65,7 @@ $(function() {
   last_message_id = $('.message:last').data("message-id");
     $.ajax({      
       url: "api/messages",
-      type: 'get',
+      type: 'GET',
       dataType: 'json',
       data: {id: last_message_id}
     })
