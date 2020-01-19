@@ -58,9 +58,15 @@ $(function() {
       $('.message-list').append(html);      
       $('form')[0].reset();
       $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+    })
+    .fail(function(){
+      alert('エラーが発生したためメッセージは送信できませんでした。');
+    })
+    .always(function(){
       $('.send-box__btn').prop('disabled', false);
-    });
+    })
   })
+
   var reloadMessages = function() {
   last_message_id = $('.message:last').data("message-id");
     $.ajax({      
@@ -69,20 +75,20 @@ $(function() {
       dataType: 'json',
       data: {id: last_message_id}
     })
-     .done(function(messages) {
-      if (messages.length !== 0) {
-        var insertHTML = '';
-        $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
+      .done(function(messages) {
+        if (messages.length !== 0) {
+          var insertHTML = '';
+          $.each(messages, function(i, message) {
+            insertHTML += buildHTML(message)
           });
-        $('.message-list').append(insertHTML);
-        $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
-        $("#new_message")[0].reset();
-        $(".send-box__btn").prop("disabled", false);
-      }
-    })
-    .fail(function() {
-    });
+          $('.message-list').append(insertHTML);
+          $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+          $("#new_message")[0].reset();
+          $(".send-box__btn").prop("disabled", false);
+        }
+      })
+      .fail(function() {
+      });
   };
 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
